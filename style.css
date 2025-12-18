@@ -183,3 +183,175 @@ textarea::placeholder {
     }
 }
 
+/* ===== MOBILE ONLY ===== */
+@media (max-width: 600px) {
+    /* ===== INPUT CARD ===== */
+    .input-container {
+        min-height: 180px;
+        max-height: 300px;
+        padding: 18px;
+        width: 83%;
+        max-width: none;
+    }
+
+    textarea {
+        font-size: 16px;
+        line-height: 1.5;
+
+        /* batasi tinggi awal */
+        min-height: 120px;
+        max-height: 220px;
+
+        padding-bottom: 56px; /* tetap aman untuk counter */
+    }
+
+    h1 {
+        font-size: 38px; /* lebih kecil dari desktop */
+    }
+
+    .subtitle {
+        font-size: 14px;
+        padding: 0 20px; /* JARAK KIRI & KANAN */
+        line-height: 1.6;
+    }
+
+    /* ===== COUNTER (WORD & SENTENCE) ===== */
+    .counter {
+        right: 20px;   /* geser lebih ke kanan */
+        bottom: 6px;
+        font-size: 13px;
+    }
+    
+    .buttons-grid {
+        width: 88%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "upper lower"
+            "capitalized sentence"
+            "copy clear";
+        gap: 14px;
+    }
+
+    .header-content {
+        width: 88%;
+    }
+
+    /* RESET WIDTH DESKTOP */
+    .buttons-grid .btn-large,
+    .buttons-grid .btn-small {
+        width: 100% !important;
+        height: 56px;
+        font-size: 13px;
+    }
+
+    /* MAP AREA KE TOMBOL (URUT SESUAI HTML) */
+    .buttons-grid button:nth-child(1) { grid-area: upper; }
+    .buttons-grid button:nth-child(2) { grid-area: lower; }
+    .buttons-grid button:nth-child(4) { grid-area: capitalized; }
+    .buttons-grid button:nth-child(5) { grid-area: sentence; }
+    .buttons-grid button:nth-child(6) { grid-area: copy; }
+    .buttons-grid button:nth-child(3) { grid-area: clear; }
+
+}
+
+@media (max-width: 900px) and (orientation: landscape) {
+
+    h1 {
+        font-size: 38px; /* lebih kecil dari desktop */
+    }
+
+    h1 {
+        margin-bottom: 8px; /* lebih kecil dari desktop */
+    }
+
+    .header-content {
+        width: 92%;
+        margin-top: -20px;
+        max-width: 1126px; /* SAMA DENGAN INPUT */
+        margin-bottom: 14px;
+    }
+    
+    .subtitle {
+        padding: 0;              /* hapus padding mobile portrait */
+        text-align: left;        /* sejajar seperti input */
+    }
+
+    .input-container {
+        min-height: 140px;
+        max-height: 220px;
+        padding: 16px;
+        width: 85%;
+    }
+
+    textarea {
+        min-height: 90px;
+        max-height: 160px;
+        font-size: 15px;
+        line-height: 1.45;
+        padding-bottom: 48px; /* aman buat counter */
+    }
+
+    /* RESET GRID KE DESKTOP */
+    .buttons-grid {
+        width: auto;
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-template-areas: none;
+        justify-content: center;
+        gap: 18px;
+    }
+
+    /* RESET BUTTON SIZE */
+    .buttons-grid .btn-large {
+        width: 240px;
+        height: 64px;
+        font-size: 14px;
+    }
+
+    .buttons-grid .btn-small {
+        width: 120px;
+        height: 64px;
+        font-size: 14px;
+    }
+
+    /* HAPUS AREA MOBILE */
+    .buttons-grid button {
+        grid-area: auto !important;
+    }
+
+}
+
+/* ===== DESKTOP KECIL / WINDOW SETENGAH ===== */
+@media (max-width: 900px) {
+
+    /* BUTTON JADI MOBILE PORTRAIT */
+    .buttons-grid {
+        width: 82%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "upper lower"
+            "capitalized sentence"
+            "copy clear";
+        gap: 14px;
+        justify-content: center;
+    }
+
+    /* RESET WIDTH DESKTOP */
+    .buttons-grid .btn-large,
+    .buttons-grid .btn-small {
+        width: 100% !important;
+        height: 56px;
+        font-size: 13px;
+    }
+
+    /* MAP URUTAN */
+    .buttons-grid button:nth-child(1) { grid-area: upper; }
+    .buttons-grid button:nth-child(2) { grid-area: lower; }
+    .buttons-grid button:nth-child(4) { grid-area: capitalized; }
+    .buttons-grid button:nth-child(5) { grid-area: sentence; }
+    .buttons-grid button:nth-child(6) { grid-area: copy; }
+    .buttons-grid button:nth-child(3) { grid-area: clear; }
+
+}
