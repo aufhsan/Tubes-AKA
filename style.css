@@ -1,0 +1,185 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+/* BACKGROUND */
+body {
+    background-color: #0f0f13;
+    background-image:
+        radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%),
+        radial-gradient(at 50% 0%, hsla(225,39%,30%,1) 0, transparent 50%),
+        radial-gradient(at 100% 0%, hsla(339,49%,30%,1) 0, transparent 50%),
+        linear-gradient(120deg, #1a0b2e 0%, #2e1065 50%, #4c1d95 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+/* WRAPPER */
+.wrapper {
+    width: 100%;
+    max-width: 1440px;
+    padding-top: 56px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* HEADER */
+.header-content {
+    text-align: center;
+    max-width: 800px;
+    margin-bottom: 28px;
+}
+
+h1 {
+    font-size: 64px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.subtitle {
+    color: rgba(255,255,255,.7);
+    line-height: 1.5;
+}
+
+/* ===== GLASS CARD (DIAMBIL DARI KODE KAMU) ===== */
+.glass-panel {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+    border-radius: 24px;
+}
+
+.input-container {
+    width: 100%;
+    max-width: 1126px;
+    min-height: 260px;
+    max-height: 520px; /* BATAS AMAN */
+    padding: 30px;
+    position: relative;
+    margin-bottom: 28px;
+    display: flex;
+}
+
+/* TEXTAREA */
+textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+
+    font-size: 18px;
+    line-height: 1.6;
+
+    resize: none;
+    overflow-y: auto;
+
+    padding-right: 28px;  /* jarak scrollbar */
+    padding-bottom: 64px; /* 🔥 RUANG KHUSUS UNTUK COUNTER */
+}
+
+
+textarea::placeholder {
+    color: rgba(255,255,255,.5);
+}
+
+.counter {
+    position: absolute;
+    bottom: 5px;   /* 🔥 MASUK KE AREA BORDER */
+    right: 49px;
+
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.5);
+
+    pointer-events: none;
+}
+
+
+/* BUTTON GRID */
+.buttons-grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 18px;
+    justify-content: center;
+    margin-top: 20px;   /* NAIKKAN DARI BAWAH */
+    margin-bottom: 48px; /* JARAK DENGAN BAWAH LAYAR */
+}
+
+
+/* ===== BUTTON BASE (DIAMBIL DARI KODE KAMU) ===== */
+.btn {
+    height: 64px; /* dari 89px → 64px */
+    border-radius: 14px; /* sedikit lebih kecil */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.05)
+    );
+    color: white;
+    font-size: 14px; /* dari 16px → 14px */
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn:hover {
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.2),
+        rgba(255, 255, 255, 0.1)
+    );
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+/* BUTTON SIZE */
+.btn-large { width: 240px; }
+.btn-small { width: 120px; }
+
+/* SPECIAL COLORS */
+.btn-copy {
+    background: linear-gradient(180deg, #3b82f6, #2563eb);
+    border: none;
+}
+.btn-copy:hover {
+    background: linear-gradient(180deg, #2563eb, #1e40af);
+}
+
+.btn-clear {
+    background: linear-gradient(180deg, #ef4444, #dc2626);
+    border: none;
+}
+.btn-clear:hover {
+    background: linear-gradient(180deg, #dc2626, #991b1b);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1200px) {
+    .input-container {
+        width: 90%;
+    }
+    .buttons-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .btn-large, .btn-small {
+        width: 100%;
+    }
+}
+

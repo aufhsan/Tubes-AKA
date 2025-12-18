@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Case Tool</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="wrapper">
+
+    <div class="header-content">
+        <h1>Text Case</h1>
+        <p class="subtitle">
+            Reliable online tool designed to quickly convert text into
+            uppercase, lowercase, sentence case, and capitalized case.
+        </p>
+    </div>
+
+    <!-- CARD / PANEL -->
+    <div class="glass-panel input-container">
+        <textarea id="textInput" placeholder="Input text here..."></textarea>
+        <div class="counter" id="counter">0 Word &nbsp; 0 Sentence</div>
+    </div>
+
+    <!-- BUTTONS -->
+    <div class="buttons-grid">
+        <button class="btn btn-large" onclick="transformText('upper')">UPPER CASE</button>
+        <button class="btn btn-large" onclick="transformText('lower')">LOWER CASE</button>
+        <button class="btn btn-small btn-clear" onclick="clearText()">CLEAR</button>
+
+        <button class="btn btn-large" onclick="transformText('capitalized')">CAPITALIZED CASE</button>
+        <button class="btn btn-large" onclick="transformText('sentence')">SENTENCE CASE</button>
+        <button class="btn btn-small btn-copy" onclick="copyText()">COPY</button>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
